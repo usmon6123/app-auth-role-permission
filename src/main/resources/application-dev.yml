@@ -1,0 +1,38 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: 1
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        enable_lazy_load_no_trans: true
+        jdbc:
+          lob:
+            non_contextual_creation: true
+  sql:
+    init:
+      mode: always
+
+logging:
+  pattern:
+    file: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+  file:
+    name: logs/shop.log
+  level:
+    org.springframework.web: ERROR
+    org.hibernate: ERROR
+
+
+
+
+dataLoaderMode: always  #always bo'lsa proekt run bo'lganda avtamat bazaga malumot qo'shadi(role, permission va h.k)
+
+accessTokenLifeTime: 86400000
+refreshTokenLifeTime: 172900000
+
+tokenSecretKey: 9OhGa*6i6RiB5!~mg@w"fidFi1iuc736287-syufbujnc~0A@D
+
