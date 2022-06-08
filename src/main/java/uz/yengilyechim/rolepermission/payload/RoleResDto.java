@@ -9,7 +9,7 @@ import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import java.util.Set;
 
-public class RoleREsDto {
+public class RoleResDto {
 
     private Long id;
 
@@ -20,7 +20,7 @@ public class RoleREsDto {
     private Set<PermissionEnum> permissions;
 
 
-    public RoleREsDto(Role role) {
+    public RoleResDto(Role role) {
         this.id = role.getId();
         this.name = role.getName();
         this.description = role.getDescription();

@@ -33,9 +33,6 @@ public class User extends AbsUUIDEntity implements UserDetails {
 
 
 
-
-
-
     @ManyToOne(fetch = FetchType.LAZY)
     private Role role;
 
