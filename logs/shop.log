@@ -32,3 +32,370 @@
 2022-06-08 09:51:02 - Tomcat started on port(s): 8084 (http) with context path ''
 2022-06-08 09:51:02 - Started RolePermissionApplication in 10.659 seconds (JVM running for 14.722)
 2022-06-08 09:51:06 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-06-08 15:53:16 - Starting RolePermissionApplication using Java 17.0.3 on WIN-HI0IRFTLR7J with PID 10420 (C:\Users\Usmon Ataboyev\Desktop\Bobur aka Carparation\role-permission\target\classes started by Usmon Ataboyev in C:\Users\Usmon Ataboyev\Desktop\Bobur aka Carparation\role-permission)
+2022-06-08 15:53:16 - The following 1 profile is active: "dev"
+2022-06-08 15:53:20 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-06-08 15:53:20 - Finished Spring Data repository scanning in 240 ms. Found 2 JPA repository interfaces.
+2022-06-08 15:53:25 - Tomcat initialized with port(s): 8084 (http)
+2022-06-08 15:53:25 - Starting service [Tomcat]
+2022-06-08 15:53:25 - Starting Servlet engine: [Apache Tomcat/9.0.63]
+2022-06-08 15:53:27 - Initializing Spring embedded WebApplicationContext
+2022-06-08 15:53:27 - Root WebApplicationContext: initialization completed in 9895 ms
+2022-06-08 15:53:30 - HikariPool-1 - Starting...
+2022-06-08 15:53:33 - HikariPool-1 - Start completed.
+2022-06-08 15:53:44 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-06-08 15:53:48 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-06-08 15:53:55 - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@e75bae7, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3531509c, org.springframework.security.web.context.SecurityContextPersistenceFilter@a36ff0b, org.springframework.security.web.header.HeaderWriterFilter@13868c41, org.springframework.web.filter.CorsFilter@23169374, org.springframework.security.web.authentication.logout.LogoutFilter@7833407, uz.yengilyechim.rolepermission.security.JWTFilter@2c731a16, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@733345f5, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@63a9af28, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4f2b1a2f, org.springframework.security.web.session.SessionManagementFilter@6cb759d5, org.springframework.security.web.access.ExceptionTranslationFilter@12b66c89, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1bcdd302]
+2022-06-08 15:53:57 - Tomcat started on port(s): 8084 (http) with context path ''
+2022-06-08 15:53:57 - Started RolePermissionApplication in 43.059 seconds (JVM running for 51.692)
+2022-06-08 15:57:15 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-06-08 16:01:09 - Starting RolePermissionApplication using Java 17.0.3 on WIN-HI0IRFTLR7J with PID 2020 (C:\Users\Usmon Ataboyev\Desktop\Bobur aka Carparation\role-permission\target\classes started by Usmon Ataboyev in C:\Users\Usmon Ataboyev\Desktop\Bobur aka Carparation\role-permission)
+2022-06-08 16:01:09 - The following 1 profile is active: "dev"
+2022-06-08 16:01:11 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-06-08 16:01:11 - Finished Spring Data repository scanning in 232 ms. Found 2 JPA repository interfaces.
+2022-06-08 16:01:14 - Tomcat initialized with port(s): 8084 (http)
+2022-06-08 16:01:14 - Starting service [Tomcat]
+2022-06-08 16:01:14 - Starting Servlet engine: [Apache Tomcat/9.0.63]
+2022-06-08 16:01:14 - Initializing Spring embedded WebApplicationContext
+2022-06-08 16:01:14 - Root WebApplicationContext: initialization completed in 4884 ms
+2022-06-08 16:01:16 - HikariPool-1 - Starting...
+2022-06-08 16:01:16 - HikariPool-1 - Start completed.
+2022-06-08 16:01:19 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-06-08 16:01:20 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-06-08 16:01:22 - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6a4d57b7, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@a36ff0b, org.springframework.security.web.context.SecurityContextPersistenceFilter@3a00237d, org.springframework.security.web.header.HeaderWriterFilter@7d4e424e, org.springframework.web.filter.CorsFilter@1ecf784f, org.springframework.security.web.authentication.logout.LogoutFilter@6c537267, uz.yengilyechim.rolepermission.security.JWTFilter@2079fcfc, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5c552f08, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@70a24463, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@344769b9, org.springframework.security.web.session.SessionManagementFilter@2d2afc39, org.springframework.security.web.access.ExceptionTranslationFilter@38394e76, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@40696fc6]
+2022-06-08 16:01:23 - Tomcat started on port(s): 8084 (http) with context path ''
+2022-06-08 16:01:23 - Started RolePermissionApplication in 15.663 seconds (JVM running for 21.734)
+2022-06-08 16:02:00 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-06-08 16:07:13 - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=56s716ms627µs200ns).
+2022-06-08 16:07:57 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-06-08 16:07:57 - HikariPool-1 - Shutdown initiated...
+2022-06-08 16:07:57 - HikariPool-1 - Shutdown completed.
+2022-06-08 16:10:58 - Starting RolePermissionApplication using Java 17.0.3 on WIN-HI0IRFTLR7J with PID 6884 (C:\Users\Usmon Ataboyev\Desktop\Bobur aka Carparation\role-permission\target\classes started by Usmon Ataboyev in C:\Users\Usmon Ataboyev\Desktop\Bobur aka Carparation\role-permission)
+2022-06-08 16:10:58 - The following 1 profile is active: "dev"
+2022-06-08 16:11:00 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-06-08 16:11:00 - Finished Spring Data repository scanning in 109 ms. Found 2 JPA repository interfaces.
+2022-06-08 16:11:01 - Tomcat initialized with port(s): 8084 (http)
+2022-06-08 16:11:01 - Starting service [Tomcat]
+2022-06-08 16:11:01 - Starting Servlet engine: [Apache Tomcat/9.0.63]
+2022-06-08 16:11:01 - Initializing Spring embedded WebApplicationContext
+2022-06-08 16:11:01 - Root WebApplicationContext: initialization completed in 2850 ms
+2022-06-08 16:11:02 - HikariPool-1 - Starting...
+2022-06-08 16:11:02 - HikariPool-1 - Start completed.
+2022-06-08 16:11:04 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-06-08 16:11:05 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-06-08 16:11:06 - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@345d641e, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@70cdbd18, org.springframework.security.web.context.SecurityContextPersistenceFilter@66f5770e, org.springframework.security.web.header.HeaderWriterFilter@37b1218, org.springframework.web.filter.CorsFilter@38d895e8, org.springframework.security.web.authentication.logout.LogoutFilter@370a935f, uz.yengilyechim.rolepermission.security.JWTFilter@3117ac8d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1a53ac0c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2d2afc39, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2f3d5cd, org.springframework.security.web.session.SessionManagementFilter@662e5590, org.springframework.security.web.access.ExceptionTranslationFilter@5169db2f, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@188058fb]
+2022-06-08 16:11:07 - Tomcat started on port(s): 8084 (http) with context path ''
+2022-06-08 16:11:07 - Started RolePermissionApplication in 10.24 seconds (JVM running for 12.125)
+2022-06-08 16:11:27 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-06-08 16:11:27 - HikariPool-1 - Shutdown initiated...
+2022-06-08 16:11:27 - HikariPool-1 - Shutdown completed.
+2022-06-08 17:13:25 - Starting RolePermissionApplication using Java 17.0.3 on WIN-HI0IRFTLR7J with PID 10808 (C:\Users\Usmon Ataboyev\Desktop\Bobur aka Carparation\role-permission\target\classes started by Usmon Ataboyev in C:\Users\Usmon Ataboyev\Desktop\Bobur aka Carparation\role-permission)
+2022-06-08 17:13:25 - The following 1 profile is active: "dev"
+2022-06-08 17:13:29 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-06-08 17:13:29 - Finished Spring Data repository scanning in 134 ms. Found 2 JPA repository interfaces.
+2022-06-08 17:13:30 - Tomcat initialized with port(s): 8084 (http)
+2022-06-08 17:13:30 - Starting service [Tomcat]
+2022-06-08 17:13:30 - Starting Servlet engine: [Apache Tomcat/9.0.63]
+2022-06-08 17:13:30 - Initializing Spring embedded WebApplicationContext
+2022-06-08 17:13:30 - Root WebApplicationContext: initialization completed in 4803 ms
+2022-06-08 17:13:32 - HikariPool-1 - Starting...
+2022-06-08 17:13:32 - HikariPool-1 - Start completed.
+2022-06-08 17:13:34 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-06-08 17:13:36 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-06-08 17:13:49 - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@530bd77b, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@58a9e64d, org.springframework.security.web.context.SecurityContextPersistenceFilter@46eb2260, org.springframework.security.web.header.HeaderWriterFilter@bc88295, org.springframework.web.filter.CorsFilter@7657d29f, org.springframework.security.web.authentication.logout.LogoutFilter@33425171, uz.yengilyechim.rolepermission.security.JWTFilter@3ba96967, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@31e84f10, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@63d9e1a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6ace3, org.springframework.security.web.session.SessionManagementFilter@64df8422, org.springframework.security.web.access.ExceptionTranslationFilter@46c475ba, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1e5190bd]
+2022-06-08 17:13:50 - Tomcat started on port(s): 8084 (http) with context path ''
+2022-06-08 17:13:50 - Started RolePermissionApplication in 26.457 seconds (JVM running for 31.944)
+2022-06-08 17:13:51 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-06-08 17:15:40 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-06-08 17:15:40 - HikariPool-1 - Shutdown initiated...
+2022-06-08 17:15:40 - HikariPool-1 - Shutdown completed.
+2022-06-08 17:16:06 - Starting RolePermissionApplication using Java 17.0.3 on WIN-HI0IRFTLR7J with PID 11324 (C:\Users\Usmon Ataboyev\Desktop\Bobur aka Carparation\role-permission\target\classes started by Usmon Ataboyev in C:\Users\Usmon Ataboyev\Desktop\Bobur aka Carparation\role-permission)
+2022-06-08 17:16:06 - The following 1 profile is active: "dev"
+2022-06-08 17:16:07 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-06-08 17:16:07 - Finished Spring Data repository scanning in 74 ms. Found 2 JPA repository interfaces.
+2022-06-08 17:16:08 - Tomcat initialized with port(s): 8084 (http)
+2022-06-08 17:16:08 - Starting service [Tomcat]
+2022-06-08 17:16:08 - Starting Servlet engine: [Apache Tomcat/9.0.63]
+2022-06-08 17:16:08 - Initializing Spring embedded WebApplicationContext
+2022-06-08 17:16:08 - Root WebApplicationContext: initialization completed in 2235 ms
+2022-06-08 17:16:09 - HikariPool-1 - Starting...
+2022-06-08 17:16:09 - HikariPool-1 - Start completed.
+2022-06-08 17:16:11 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-06-08 17:16:12 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-06-08 17:16:13 - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@13868c41, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@67d55a46, org.springframework.security.web.context.SecurityContextPersistenceFilter@49654a35, org.springframework.security.web.header.HeaderWriterFilter@7772ec28, org.springframework.web.filter.CorsFilter@72115c48, org.springframework.security.web.authentication.logout.LogoutFilter@514f2020, uz.yengilyechim.rolepermission.security.JWTFilter@60484429, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@32068aef, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5afba80c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1d982fbe, org.springframework.security.web.session.SessionManagementFilter@3662c887, org.springframework.security.web.access.ExceptionTranslationFilter@4930213b, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@477d6f66]
+2022-06-08 17:16:14 - Tomcat started on port(s): 8084 (http) with context path ''
+2022-06-08 17:16:14 - Started RolePermissionApplication in 9.834 seconds (JVM running for 11.523)
+2022-06-08 17:16:37 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-06-08 17:26:44 - Starting RolePermissionApplication using Java 17.0.3 on WIN-HI0IRFTLR7J with PID 7912 (C:\Users\Usmon Ataboyev\Desktop\Bobur aka Carparation\role-permission\target\classes started by Usmon Ataboyev in C:\Users\Usmon Ataboyev\Desktop\Bobur aka Carparation\role-permission)
+2022-06-08 17:26:44 - The following 1 profile is active: "dev"
+2022-06-08 17:26:45 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-06-08 17:26:45 - Finished Spring Data repository scanning in 76 ms. Found 2 JPA repository interfaces.
+2022-06-08 17:26:46 - Tomcat initialized with port(s): 8084 (http)
+2022-06-08 17:26:46 - Starting service [Tomcat]
+2022-06-08 17:26:46 - Starting Servlet engine: [Apache Tomcat/9.0.63]
+2022-06-08 17:26:46 - Initializing Spring embedded WebApplicationContext
+2022-06-08 17:26:46 - Root WebApplicationContext: initialization completed in 2547 ms
+2022-06-08 17:26:47 - HikariPool-1 - Starting...
+2022-06-08 17:26:47 - HikariPool-1 - Start completed.
+2022-06-08 17:26:55 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-06-08 17:26:56 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-06-08 17:26:57 - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@220a5163, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6158113e, org.springframework.security.web.context.SecurityContextPersistenceFilter@7f53b345, org.springframework.security.web.header.HeaderWriterFilter@22ea6051, org.springframework.web.filter.CorsFilter@61375dff, org.springframework.security.web.authentication.logout.LogoutFilter@5169db2f, uz.yengilyechim.rolepermission.security.JWTFilter@2568611c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@75df4b1d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@25e24908, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2bfa5678, org.springframework.security.web.session.SessionManagementFilter@4d1b4fa1, org.springframework.security.web.access.ExceptionTranslationFilter@a72925, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7a6e0f3c]
+2022-06-08 17:26:57 - Tomcat started on port(s): 8084 (http) with context path ''
+2022-06-08 17:26:57 - Started RolePermissionApplication in 14.47 seconds (JVM running for 15.786)
+2022-06-08 17:27:13 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-06-08 17:29:19 - Starting RolePermissionApplication using Java 17.0.3 on WIN-HI0IRFTLR7J with PID 6924 (C:\Users\Usmon Ataboyev\Desktop\Bobur aka Carparation\role-permission\target\classes started by Usmon Ataboyev in C:\Users\Usmon Ataboyev\Desktop\Bobur aka Carparation\role-permission)
+2022-06-08 17:29:19 - The following 1 profile is active: "dev"
+2022-06-08 17:29:20 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-06-08 17:29:20 - Finished Spring Data repository scanning in 113 ms. Found 2 JPA repository interfaces.
+2022-06-08 17:29:21 - Tomcat initialized with port(s): 8084 (http)
+2022-06-08 17:29:21 - Starting service [Tomcat]
+2022-06-08 17:29:21 - Starting Servlet engine: [Apache Tomcat/9.0.63]
+2022-06-08 17:29:21 - Initializing Spring embedded WebApplicationContext
+2022-06-08 17:29:21 - Root WebApplicationContext: initialization completed in 2696 ms
+2022-06-08 17:29:22 - HikariPool-1 - Starting...
+2022-06-08 17:29:22 - HikariPool-1 - Start completed.
+2022-06-08 17:29:24 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-06-08 17:29:25 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-06-08 17:29:26 - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@553d828a, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6cb759d5, org.springframework.security.web.context.SecurityContextPersistenceFilter@7fdf7359, org.springframework.security.web.header.HeaderWriterFilter@51097500, org.springframework.web.filter.CorsFilter@2ba9765b, org.springframework.security.web.authentication.logout.LogoutFilter@556ae220, uz.yengilyechim.rolepermission.security.JWTFilter@4b762988, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@bc88295, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6c96346b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5f233f9, org.springframework.security.web.session.SessionManagementFilter@2f8ab988, org.springframework.security.web.access.ExceptionTranslationFilter@5b3a8bea, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@345d641e]
+2022-06-08 17:29:28 - Tomcat started on port(s): 8084 (http) with context path ''
+2022-06-08 17:29:28 - Started RolePermissionApplication in 10.067 seconds (JVM running for 11.825)
+2022-06-08 17:30:54 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-06-08 17:33:09 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-06-08 17:33:09 - HikariPool-1 - Shutdown initiated...
+2022-06-08 17:33:09 - HikariPool-1 - Shutdown completed.
+2022-06-08 17:33:19 - Starting RolePermissionApplication using Java 17.0.3 on WIN-HI0IRFTLR7J with PID 972 (C:\Users\Usmon Ataboyev\Desktop\Bobur aka Carparation\role-permission\target\classes started by Usmon Ataboyev in C:\Users\Usmon Ataboyev\Desktop\Bobur aka Carparation\role-permission)
+2022-06-08 17:33:19 - The following 1 profile is active: "dev"
+2022-06-08 17:33:20 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-06-08 17:33:20 - Finished Spring Data repository scanning in 108 ms. Found 2 JPA repository interfaces.
+2022-06-08 17:33:21 - Tomcat initialized with port(s): 8084 (http)
+2022-06-08 17:33:21 - Starting service [Tomcat]
+2022-06-08 17:33:21 - Starting Servlet engine: [Apache Tomcat/9.0.63]
+2022-06-08 17:33:22 - Initializing Spring embedded WebApplicationContext
+2022-06-08 17:33:22 - Root WebApplicationContext: initialization completed in 2658 ms
+2022-06-08 17:33:22 - HikariPool-1 - Starting...
+2022-06-08 17:33:23 - HikariPool-1 - Start completed.
+2022-06-08 17:33:24 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-06-08 17:33:25 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-06-08 17:33:27 - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@344769b9, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@34376069, org.springframework.security.web.context.SecurityContextPersistenceFilter@aade5a2, org.springframework.security.web.header.HeaderWriterFilter@46c475ba, org.springframework.web.filter.CorsFilter@9c40f43, org.springframework.security.web.authentication.logout.LogoutFilter@7962c1d5, uz.yengilyechim.rolepermission.security.JWTFilter@4a3516fd, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2b30b627, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7e017f47, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6cac0334, org.springframework.security.web.session.SessionManagementFilter@3a00237d, org.springframework.security.web.access.ExceptionTranslationFilter@66f5770e, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@744673f3]
+2022-06-08 17:33:28 - Tomcat started on port(s): 8084 (http) with context path ''
+2022-06-08 17:33:28 - Started RolePermissionApplication in 9.904 seconds (JVM running for 11.721)
+2022-06-08 17:33:52 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-06-08 17:36:56 - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+uz.yengilyechim.rolepermission.exception.RestException: User not found
+	at uz.yengilyechim.rolepermission.exception.RestException.restThrow(RestException.java:32)
+	at uz.yengilyechim.rolepermission.service.AuthService.lambda$loadById$3(AuthService.java:109)
+	at java.base/java.util.Optional.orElseThrow(Optional.java:403)
+	at uz.yengilyechim.rolepermission.service.AuthService.loadById(AuthService.java:109)
+	at uz.yengilyechim.rolepermission.security.JWTFilter.doFilterInternal(JWTFilter.java:51)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:112)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:82)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:211)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:354)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:267)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-06-08 17:40:28 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-06-08 17:40:28 - HikariPool-1 - Shutdown initiated...
+2022-06-08 17:40:28 - HikariPool-1 - Shutdown completed.
+2022-06-08 17:40:39 - Starting RolePermissionApplication using Java 17.0.3 on WIN-HI0IRFTLR7J with PID 11136 (C:\Users\Usmon Ataboyev\Desktop\Bobur aka Carparation\role-permission\target\classes started by Usmon Ataboyev in C:\Users\Usmon Ataboyev\Desktop\Bobur aka Carparation\role-permission)
+2022-06-08 17:40:39 - The following 1 profile is active: "dev"
+2022-06-08 17:40:40 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-06-08 17:40:40 - Finished Spring Data repository scanning in 117 ms. Found 2 JPA repository interfaces.
+2022-06-08 17:40:42 - Tomcat initialized with port(s): 8084 (http)
+2022-06-08 17:40:42 - Starting service [Tomcat]
+2022-06-08 17:40:42 - Starting Servlet engine: [Apache Tomcat/9.0.63]
+2022-06-08 17:40:42 - Initializing Spring embedded WebApplicationContext
+2022-06-08 17:40:42 - Root WebApplicationContext: initialization completed in 2625 ms
+2022-06-08 17:40:43 - HikariPool-1 - Starting...
+2022-06-08 17:40:43 - HikariPool-1 - Start completed.
+2022-06-08 17:40:45 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-06-08 17:40:47 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-06-08 17:40:48 - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@70cdbd18, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@38d895e8, org.springframework.security.web.context.SecurityContextPersistenceFilter@53f94afe, org.springframework.security.web.header.HeaderWriterFilter@32068aef, org.springframework.web.filter.CorsFilter@2f3d5cd, org.springframework.security.web.authentication.logout.LogoutFilter@6166aac5, uz.yengilyechim.rolepermission.security.JWTFilter@332fa1c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4a36a35d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@26c2f767, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5dd12c19, org.springframework.security.web.session.SessionManagementFilter@23e573e, org.springframework.security.web.access.ExceptionTranslationFilter@478cc5f1, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@914ab92]
+2022-06-08 17:40:50 - Tomcat started on port(s): 8084 (http) with context path ''
+2022-06-08 17:40:50 - Started RolePermissionApplication in 11.624 seconds (JVM running for 13.474)
+2022-06-08 17:40:53 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-06-08 17:44:22 - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+uz.yengilyechim.rolepermission.exception.RestException: User not found
+	at uz.yengilyechim.rolepermission.exception.RestException.restThrow(RestException.java:32)
+	at uz.yengilyechim.rolepermission.service.AuthService.lambda$loadById$3(AuthService.java:109)
+	at java.base/java.util.Optional.orElseThrow(Optional.java:403)
+	at uz.yengilyechim.rolepermission.service.AuthService.loadById(AuthService.java:109)
+	at uz.yengilyechim.rolepermission.security.JWTFilter.doFilterInternal(JWTFilter.java:51)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:112)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:82)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:211)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:354)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:267)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-06-08 17:45:00 - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+uz.yengilyechim.rolepermission.exception.RestException: User not found
+	at uz.yengilyechim.rolepermission.exception.RestException.restThrow(RestException.java:32)
+	at uz.yengilyechim.rolepermission.service.AuthService.lambda$loadById$3(AuthService.java:109)
+	at java.base/java.util.Optional.orElseThrow(Optional.java:403)
+	at uz.yengilyechim.rolepermission.service.AuthService.loadById(AuthService.java:109)
+	at uz.yengilyechim.rolepermission.security.JWTFilter.doFilterInternal(JWTFilter.java:51)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:112)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:82)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:211)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:354)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:267)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-06-08 17:46:55 - entered sign-up SignUpDto(username=Usmon, password=Usmon123)
+2022-06-08 17:47:12 - entered sign-up SignUpDto(username=Usmon, password=Usmon123)
+2022-06-08 17:47:47 - entered sign-up SignUpDto(username=Usmon, password=Usmon123)
+2022-06-08 17:47:49 - entered sign-up SignUpDto(username=Usmon, password=Usmon123)
+2022-06-08 17:47:50 - entered sign-up SignUpDto(username=Usmon, password=Usmon123)
+2022-06-08 17:48:04 - entered sign-up SignUpDto(username=Usmon, password=Usmon123)
+2022-06-08 17:48:29 - entered sign-up SignUpDto(username=Usmon2, password=Usmon1234)
+2022-06-08 17:49:22 - entered sign-up SignUpDto(username=Usmon2, password=Usmon1234)
+2022-06-08 17:49:48 - entered sign-up SignUpDto(username=Usmon2, password=Usmon1234)
+2022-06-08 18:03:35 - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=13m22s223ms772µs300ns).
+2022-06-08 18:03:35 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-06-08 18:03:35 - HikariPool-1 - Shutdown initiated...
+2022-06-08 18:03:35 - HikariPool-1 - Shutdown completed.

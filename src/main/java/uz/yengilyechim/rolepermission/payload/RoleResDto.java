@@ -1,5 +1,8 @@
 package uz.yengilyechim.rolepermission.payload;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import uz.yengilyechim.rolepermission.entity.Role;
 import uz.yengilyechim.rolepermission.enums.PermissionEnum;
 
@@ -8,7 +11,7 @@ import javax.persistence.ElementCollection;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import java.util.Set;
-
+@AllArgsConstructor@NoArgsConstructor@Data
 public class RoleResDto {
 
     private Long id;

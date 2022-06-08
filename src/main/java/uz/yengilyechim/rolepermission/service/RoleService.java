@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import uz.yengilyechim.rolepermission.entity.Role;
 import uz.yengilyechim.rolepermission.enums.PermissionEnum;
 import uz.yengilyechim.rolepermission.exception.RestException;
+import uz.yengilyechim.rolepermission.mapper.RoleMapper;
 import uz.yengilyechim.rolepermission.payload.ApiResult;
 import uz.yengilyechim.rolepermission.payload.PermissionEnumDto;
 import uz.yengilyechim.rolepermission.payload.RoleDto;
@@ -15,7 +16,11 @@ import uz.yengilyechim.rolepermission.repository.UserRepository;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
+
+import static uz.yengilyechim.rolepermission.component.DataLoader.ROLE_ADMIN;
+import static uz.yengilyechim.rolepermission.component.DataLoader.ROLE_USER;
 
 @Service
 @RequiredArgsConstructor
@@ -23,6 +28,7 @@ public class RoleService {
 
     private final RoleRepository roleRepository;
     private final UserRepository userRepository;
+    private final RoleMapper roleMapper;
 
 
     public ApiResult<?> add(RoleDto roleDto) {
@@ -42,7 +48,9 @@ public class RoleService {
 
         Role role = roleRepository.findById(id).orElseThrow(() -> new RestException("ROLE_NOT_fOUND", HttpStatus.NOT_FOUND));
 
-        return ApiResult.successResponse(new RoleResDto(role));
+        RoleResDto roleResDto = roleMapper.roleToRseDto(role);
+
+        return ApiResult.successResponse(roleResDto);
 
 
     }
@@ -76,7 +84,11 @@ public class RoleService {
     public ApiResult<?> delete(Long id) {
 
         //O'CHIRMOQCHI RO'LIMIZ BAZADA BO'LMASA THROWGA OTAMIZ
-        if (!roleRepository.existsById(id)) throw RestException.notFound("THIS_ROLE_NOT_FOUND");
+        Role role = roleRepository.findById(id).orElseThrow(() -> new RestException("THIS_ROLE_NOT_FOUND", HttpStatus.NOT_FOUND));
+
+        //DATA_LOADERDA DEFAULT QO'SHILADIGAN ROLELARRNI OCHIRMOQCHI BO'LSA THROWGA OTAMIZ
+        if (role.getName().equals(ROLE_ADMIN) && role.getName().equals(ROLE_USER))throw RestException.restThrow("DEFAULT ROLENI O'CHIRISH MUMKINMAS",HttpStatus.CONFLICT);
+
 
         //AGAR ROLEDAN FOYDALANADIGAN USERLAR BO'LSA THROWGA OTAMIZ
         if(userRepository.existsByRoleId(id)) throw RestException.restThrow("BU ROLEDAN USERLAR FOYDALANADI,FAQAT USERLAR FOYDALANMAYDIGAN ROLELARNI O'CHIRISH MUMKIN",HttpStatus.CONFLICT);
@@ -86,10 +98,15 @@ public class RoleService {
     }
 
     public ApiResult<?> edit(Long id, RoleDto roleDto) {
-        //todo role edit
+
         Role role = roleRepository.findById(id).orElseThrow(() -> new RestException("ROLE_NOT_fOUND", HttpStatus.NOT_FOUND));
 
-        return null;
+        //DTO DAGI FIELDLARNI ROLEGA SET QILYAPDI
+        roleMapper.updateRoleOutThePermissions(role,roleDto);
+
+        roleRepository.save(role);
+
+        return ApiResult.successResponse("ROLE_EDITED");
 
     }
 }

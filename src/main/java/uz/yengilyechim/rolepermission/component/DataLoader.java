@@ -25,7 +25,8 @@ public class DataLoader implements CommandLineRunner {
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
 
-
+    public static String ROLE_ADMIN;
+    public static String ROLE_USER;
 
     @Value("${dataLoaderMode}")
     private String dataLoaderMode;
@@ -34,21 +35,25 @@ public class DataLoader implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         if (dataLoaderMode.equals("always")) {
+
             Role admin = roleRepository.save(new Role(
                     AppConstant.ADMIN,
                     "bu admin",
                     new HashSet<>(Arrays.asList(PermissionEnum.values()))));
+            ROLE_ADMIN = admin.getName();
 
             Role user = roleRepository.save(new Role(
                     AppConstant.USER,
                     "bu ishchi",
                     new HashSet<>(Arrays.asList(GET))));
+            ROLE_USER = user.getName();
 
             userRepository.save(new User(
                     "admin",
                     passwordEncoder.encode("admin123"),
                     admin,
                     true));
+
             userRepository.save(new User(
                     "user",
                     passwordEncoder.encode("user123"),

@@ -23,6 +23,7 @@ public class RoleController {
     @CheckPermission(values = "ADD_ROLE")
     @PostMapping("/add")
     ApiResult<?> add(@RequestBody RoleDto roleDto) {
+
         return roleService.add(roleDto);
     }
 
@@ -38,7 +39,8 @@ public class RoleController {
         return roleService.getAll();
     }
 
-    @CheckPermission(values = "EDIT_ROLE")
+//    @CheckPermission(values = {"EDIT_ROLE","ALL"})
+    @PreAuthorize(value = "hasAnyAuthority('EDIT_ROLE','ALL')")
     @PutMapping("/edit/{id}")
     ApiResult<?>edit(@PathVariable Long id,@RequestBody RoleDto roleDto){
         return roleService.edit(id,roleDto);
@@ -47,6 +49,7 @@ public class RoleController {
     @CheckPermission(values = "DELETE_ROLE")
     @DeleteMapping("/delete/{id}")
     ApiResult<?>delete(@PathVariable Long id){
+
         return roleService.delete(id);
     }
 

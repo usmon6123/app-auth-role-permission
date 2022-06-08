@@ -1,9 +1,14 @@
 package uz.yengilyechim.rolepermission.payload;
 
-import javax.management.relation.Role;
-import java.util.List;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import uz.yengilyechim.rolepermission.entity.Role;
 
+
+import java.util.List;
+@AllArgsConstructor@NoArgsConstructor@Data
 public class UserRoleDto {
 
-private Role role;
+private Long roleId;
 }
