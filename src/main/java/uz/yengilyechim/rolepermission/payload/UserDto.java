@@ -4,16 +4,16 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import uz.yengilyechim.rolepermission.entity.Role;
-import uz.yengilyechim.rolepermission.enums.PermissionEnum;
 
-
-import java.util.List;
-import java.util.Set;
+import java.util.UUID;
 
 @AllArgsConstructor@NoArgsConstructor@Data
-public class UserRoleDto {
+public class UserDto {
 
-private Long roleId;
+    private String username;
 
-private Set<PermissionEnum> permissionEnumList;
+    private RoleResDto roleResDto;
+
+
+    //userni fieldlari proektga qarab har hil bo'ladi
 }

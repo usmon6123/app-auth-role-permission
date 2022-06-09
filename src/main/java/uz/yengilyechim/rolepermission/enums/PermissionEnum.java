@@ -22,6 +22,8 @@ public enum PermissionEnum {
 
     GET_USER_LIST,
     DELETE_USER,
+    EDIT_USER_ROLE,
+    EDIT_USER,
 
     S;
 

@@ -8,13 +8,12 @@ import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import uz.yengilyechim.rolepermission.enums.PermissionEnum;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.Collection;
+import java.util.List;
 import java.util.stream.Collectors;
 
 @EqualsAndHashCode(callSuper = true)
@@ -35,6 +34,7 @@ public class User extends AbsUUIDEntity implements UserDetails {
 
     @ManyToOne(fetch = FetchType.LAZY)
     private Role role;
+
 
     private boolean accountNonExpired = true;
     private boolean accountNonLocked = true;
