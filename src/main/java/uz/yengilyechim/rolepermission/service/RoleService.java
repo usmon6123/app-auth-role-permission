@@ -11,12 +11,14 @@ import uz.yengilyechim.rolepermission.payload.ApiResult;
 import uz.yengilyechim.rolepermission.payload.PermissionEnumDto;
 import uz.yengilyechim.rolepermission.payload.RoleDto;
 import uz.yengilyechim.rolepermission.payload.RoleResDto;
+import uz.yengilyechim.rolepermission.repository.RolePermissionFromUserRepository;
 import uz.yengilyechim.rolepermission.repository.RoleRepository;
 import uz.yengilyechim.rolepermission.repository.UserRepository;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 import static uz.yengilyechim.rolepermission.component.DataLoader.ROLE_ADMIN;
@@ -29,6 +31,7 @@ public class RoleService {
     private final RoleRepository roleRepository;
     private final UserRepository userRepository;
     private final RoleMapper roleMapper;
+    private final BaseService baseService;
 
 
     public ApiResult<?> add(RoleDto roleDto) {
@@ -37,18 +40,20 @@ public class RoleService {
 
         if (exists) throw new RestException("ROLE_ALREADY_EXISTS", HttpStatus.CONFLICT);
 
-        Role role = new Role(roleDto.getName(), roleDto.getDescription(), roleDto.getPermissions());
+        Role role = new Role(roleDto.getName(), roleDto.getDescription());
 
         roleRepository.save(role);
 
         return ApiResult.successResponse("ROLE_ADDED");
     }
 
-    public ApiResult<?> getOne(Long id) {
+    public ApiResult<?> getOne(UUID userId, Long id) {
 
         Role role = roleRepository.findById(id).orElseThrow(() -> new RestException("ROLE_NOT_fOUND", HttpStatus.NOT_FOUND));
 
         RoleResDto roleResDto = roleMapper.roleToRseDto(role);
+
+        roleResDto.setPermissions(baseService.getPermissionsByUserIdAndRoleId(userId,id));
 
         return ApiResult.successResponse(roleResDto);
 
@@ -72,10 +77,10 @@ public class RoleService {
         PermissionEnum[] values = PermissionEnum.values();
 
         List<PermissionEnumDto> permissionEnumDtoList = Arrays.stream(values).map(permissionEnum ->
-                new PermissionEnumDto(
-                        permissionEnum.name(),
-                        permissionEnum.getName(),
-                        permissionEnum.getDescription()
+        new PermissionEnumDto(
+        permissionEnum.name(),
+        permissionEnum.getName(),
+        permissionEnum.getDescription()
                 )).collect(Collectors.toList());
 
         return ApiResult.successResponse(permissionEnumDtoList);
@@ -109,4 +114,8 @@ public class RoleService {
         return ApiResult.successResponse("ROLE_EDITED");
 
     }
+
+//    ----------------------------helper method-----------------------------------
+
+
 }

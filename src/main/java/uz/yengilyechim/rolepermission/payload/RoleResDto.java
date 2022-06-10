@@ -22,11 +22,10 @@ public class RoleResDto {
 
     private Set<PermissionEnum> permissions;
 
-
+//todo role per
     public RoleResDto(Role role) {
         this.id = role.getId();
         this.name = role.getName();
         this.description = role.getDescription();
-        this.permissions = role.getPermissions();
     }
 }

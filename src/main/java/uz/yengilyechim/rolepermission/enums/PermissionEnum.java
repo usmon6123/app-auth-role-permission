@@ -20,6 +20,7 @@ public enum PermissionEnum {
     EDIT_ROLE,
     DELETE_ROLE,
 
+    GET_USER,
     GET_USER_LIST,
     DELETE_USER,
     EDIT_USER_ROLE,

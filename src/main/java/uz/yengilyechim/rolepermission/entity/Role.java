@@ -23,9 +23,7 @@ public class Role extends AbsLongEntity {
     @Column(columnDefinition = "text")
     private String description;
 
-    @Enumerated(EnumType.STRING)
-    @ElementCollection
-    private Set<PermissionEnum> permissions;
-
-
+//    @Enumerated(EnumType.STRING)
+//    @ElementCollection
+//    private Set<PermissionEnum> permissions;
 }

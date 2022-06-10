@@ -1,10 +1,9 @@
 package uz.yengilyechim.rolepermission.entity;
 
+import lombok.*;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 import uz.yengilyechim.rolepermission.entity.template.AbsUUIDEntity;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -19,7 +18,7 @@ import java.util.stream.Collectors;
 @EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
+@Getter@Setter
 @Entity(name = "users")
 public class User extends AbsUUIDEntity implements UserDetails {
 
@@ -28,12 +27,12 @@ public class User extends AbsUUIDEntity implements UserDetails {
 
     private String password;
 
-
-
-
-
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne()
     private Role role;
+
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    @OneToOne(mappedBy = "user")
+    private RolePermissionFromUser rolePermissionFromUser;
 
 
     private boolean accountNonExpired = true;
@@ -43,8 +42,11 @@ public class User extends AbsUUIDEntity implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return role.getPermissions().stream().map(permissionEnum -> new SimpleGrantedAuthority(permissionEnum.name()))
+        return rolePermissionFromUser.getPermissionEnum().stream().map(permissionEnum -> new SimpleGrantedAuthority(permissionEnum.name()))
                 .collect(Collectors.toSet());
+
+//        role.getPermissions().stream().map(permissionEnum -> new SimpleGrantedAuthority(permissionEnum.name()))
+//                .collect(Collectors.toSet());
     }
 
     @Override
@@ -74,6 +76,11 @@ public class User extends AbsUUIDEntity implements UserDetails {
         this.enabled = enabled;
     }
 
-
-
+    public User(String username, String password, Role role, RolePermissionFromUser rolePermissionFromUser, boolean enabled) {
+        this.username = username;
+        this.password = password;
+        this.role = role;
+        this.rolePermissionFromUser = rolePermissionFromUser;
+        this.enabled = enabled;
+    }
 }

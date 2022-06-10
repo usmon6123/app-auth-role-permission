@@ -5,10 +5,12 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import uz.yengilyechim.rolepermission.aop.annotation.CheckPermission;
+import uz.yengilyechim.rolepermission.entity.User;
 import uz.yengilyechim.rolepermission.enums.PermissionEnum;
 import uz.yengilyechim.rolepermission.payload.ApiResult;
 import uz.yengilyechim.rolepermission.payload.RoleDto;
 import uz.yengilyechim.rolepermission.repository.RoleRepository;
+import uz.yengilyechim.rolepermission.security.CurrentUser;
 import uz.yengilyechim.rolepermission.service.RoleService;
 import uz.yengilyechim.rolepermission.utils.RestConstant;
 
@@ -29,8 +31,8 @@ public class RoleController {
 
     @CheckPermission(values = "GET_ROLE")
     @GetMapping("/get-one/{id}")
-    ApiResult<?> getOne(@PathVariable Long id) {
-        return roleService.getOne(id);
+    ApiResult<?> getOne(@PathVariable Long id, @CurrentUser User user) {
+        return roleService.getOne(user.getId(),id);
     }
 
     @CheckPermission(values = "GET_ROLES")

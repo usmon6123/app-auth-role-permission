@@ -91,7 +91,7 @@ public class ExceptionHelper {
     @ExceptionHandler(value = {AccessDeniedException.class})
     public ResponseEntity<?> handleException(AccessDeniedException ex) {
         return new ResponseEntity<>(
-                new ApiResult<>("Bu yo'lga kirishga huquq yo'q", 403),
+                "Bu yo'lga kirishga huquq yo'q",
                 HttpStatus.FORBIDDEN);
     }
 
@@ -100,7 +100,7 @@ public class ExceptionHelper {
     @ExceptionHandler(value = {MissingPathVariableException.class})
     public ResponseEntity<?> handleException(MissingPathVariableException ex) {
         return new ResponseEntity<>(
-                new ApiResult<>("ex.me", 404),
+                new ApiResult<>(ex.getMessage(), 404),
                 HttpStatus.NOT_FOUND);
     }
 

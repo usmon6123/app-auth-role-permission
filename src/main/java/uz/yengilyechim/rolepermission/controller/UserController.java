@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
+import uz.yengilyechim.rolepermission.aop.annotation.CheckPermission;
 import uz.yengilyechim.rolepermission.payload.ApiResult;
 import uz.yengilyechim.rolepermission.payload.UserDto;
 import uz.yengilyechim.rolepermission.payload.UserDtoByRole;
@@ -32,11 +33,12 @@ public class UserController {
     ApiResult<?>delete(@PathVariable UUID id){
         return userService.delete(id);
     }
-
+    //todo edit user role
+    //BU YO'LADMIN UCHUN, ADMIN ISHCHILARIGA ROLE PERMISSIONLARNI SHU YO'L ORQALI BIRIKTIRADI
     @PreAuthorize(value = "hasAnyAuthority('EDIT_USER_ROLE')")
-    @PutMapping("/edit/{id}")
-    ApiResult<?>editUserRole(@PathVariable UUID id,@RequestBody UserRoleDto userRoleDto){
-        return userService.editUserRole(id,userRoleDto);
+    @PutMapping("/edit/by-user")
+    ApiResult<?>editUserRole(@RequestBody UserRoleDto userRoleDto){
+        return userService.editUserRole(userRoleDto);
     }
 
 //    @PreAuthorize(value = "hasAnyAuthority('EDIT_USER')")
@@ -45,7 +47,7 @@ public class UserController {
 //        return userService.editUser(id,userDto);
 //    }
 
-    @PreAuthorize(value = "hasAnyAuthority('EDIT_USER_ROLE')")
+    @CheckPermission(values = {"GET_USER","GET"})
     @GetMapping("get-one/{id}")
     ApiResult<?>getOne(@PathVariable UUID id){
         return userService.getOne(id);

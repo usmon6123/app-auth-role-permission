@@ -1,11 +1,10 @@
 package uz.yengilyechim.rolepermission.service;
 
+import uz.yengilyechim.rolepermission.entity.RolePermissionFromUser;
 import uz.yengilyechim.rolepermission.entity.User;
 import uz.yengilyechim.rolepermission.exception.RestException;
-import uz.yengilyechim.rolepermission.payload.ApiResult;
-import uz.yengilyechim.rolepermission.payload.LoginDto;
-import uz.yengilyechim.rolepermission.payload.SignUpDto;
-import uz.yengilyechim.rolepermission.payload.TokenDto;
+import uz.yengilyechim.rolepermission.payload.*;
+import uz.yengilyechim.rolepermission.repository.RolePermissionFromUserRepository;
 import uz.yengilyechim.rolepermission.repository.RoleRepository;
 import uz.yengilyechim.rolepermission.repository.UserRepository;
 import uz.yengilyechim.rolepermission.security.JwtTokenProvider;
@@ -23,7 +22,6 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.util.Collections;
 import java.util.UUID;
 
 @Service
@@ -34,13 +32,15 @@ public class AuthService implements UserDetailsService {
     private final JwtTokenProvider jwtTokenProvider;
     private final PasswordEncoder passwordEncoder;
     private final RoleRepository roleRepository;
+    private final RolePermissionFromUserRepository rolePermissionFromUserRepository;
 
-    public AuthService(UserRepository userRepository, @Lazy AuthenticationManager authenticationManager, JwtTokenProvider jwtTokenProvider, @Lazy PasswordEncoder passwordEncoder, RoleRepository roleRepository) {
+    public AuthService(UserRepository userRepository, @Lazy AuthenticationManager authenticationManager, JwtTokenProvider jwtTokenProvider, @Lazy PasswordEncoder passwordEncoder, RoleRepository roleRepository, RolePermissionFromUserRepository rolePermissionFromUserRepository) {
         this.userRepository = userRepository;
         this.authenticationManager = authenticationManager;
         this.jwtTokenProvider = jwtTokenProvider;
         this.passwordEncoder = passwordEncoder;
         this.roleRepository = roleRepository;
+        this.rolePermissionFromUserRepository = rolePermissionFromUserRepository;
     }
 
     public ApiResult<?>  signIn(LoginDto loginDto) {
@@ -66,7 +66,13 @@ public class AuthService implements UserDetailsService {
                 roleRepository.findByName(AppConstant.USER).orElseThrow(() -> new RestException("role mavjudmas", HttpStatus.NOT_FOUND)),
                 true
         );
-        userRepository.save(user);
+
+        User saveUser = userRepository.save(user);
+
+        //SIGN UP ORQALI KIRAYOTGAN USERGA GET HUQUQINI ULAB QOYYAPDI
+        saveDefaultPermission(new DefaultPermissionDto(saveUser.getId(),saveUser.getRole().getId()));
+
+
         String accessToken = jwtTokenProvider.generateTokenFromIdAndRoles(user.getId(),user.getRole(), true);
         String refreshToken = jwtTokenProvider.generateTokenFromIdAndRoles(user.getId(), user.getRole(),false);
         return ApiResult.successResponse(new TokenDto(accessToken, refreshToken));
@@ -96,7 +102,10 @@ public class AuthService implements UserDetailsService {
         } catch (Exception e) {
             throw new RestException("Access token buzligan", HttpStatus.UNAUTHORIZED);
         }
+
     }
+
+
 
 
 
@@ -109,6 +118,13 @@ public class AuthService implements UserDetailsService {
         return userRepository.findById(id).orElseThrow(() -> RestException.restThrow("User not found", HttpStatus.NOT_FOUND));
     }
 
+    public void saveDefaultPermission(DefaultPermissionDto defaultPermissionDto){
+        rolePermissionFromUserRepository.save(
+                new RolePermissionFromUser(
+                        defaultPermissionDto.getUserId(),
+                        defaultPermissionDto.getRoleId(),
+                        defaultPermissionDto.getPermissionEnumList()));
+    }
 
 
 }

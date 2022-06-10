@@ -9,11 +9,16 @@ import uz.yengilyechim.rolepermission.enums.PermissionEnum;
 
 import java.util.List;
 import java.util.Set;
+import java.util.UUID;
 
-@AllArgsConstructor@NoArgsConstructor@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
 public class UserRoleDto {
 
-private Long roleId;
+    private UUID userId;
 
-private Set<PermissionEnum> permissionEnumList;
+    private Long roleId;
+
+    private Set<PermissionEnum> permissionEnumList;
 }
