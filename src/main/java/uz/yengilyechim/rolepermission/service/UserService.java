@@ -1,8 +1,10 @@
 package uz.yengilyechim.rolepermission.service;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import uz.yengilyechim.rolepermission.entity.Permission;
 import uz.yengilyechim.rolepermission.entity.Role;
 import uz.yengilyechim.rolepermission.entity.RolePermissionFromUser;
 import uz.yengilyechim.rolepermission.entity.User;
@@ -14,6 +16,7 @@ import uz.yengilyechim.rolepermission.repository.RolePermissionFromUserRepositor
 import uz.yengilyechim.rolepermission.repository.RoleRepository;
 import uz.yengilyechim.rolepermission.repository.UserRepository;
 
+import javax.transaction.Transactional;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -26,6 +29,10 @@ public class UserService {
     private final UserMapper userMapper;
     private final BaseService baseService;
     private final RolePermissionFromUserRepository rolePermissionFromUserRepository;
+
+
+    @Value("${dataLoaderMode}")
+    private String dataLoaderMode;
 
     public ApiResult<List<UserDtoByRole>> getAllByRole(Long roleId) {
 
@@ -48,6 +55,7 @@ public class UserService {
 
     }
 
+    @Transactional
     public ApiResult<?> editUserRole(UserRoleDto userRoleDto) {
 
         //ID ORQALI BAZADAN USER QAYTARADI AKS HOLDA THROW
@@ -56,12 +64,12 @@ public class UserService {
         //ID ORQALI ROLENI OLIB KELYAPMIZ AKS HOLDA THROW
         Role role = roleRepository.findById(userRoleDto.getRoleId()).orElseThrow(() -> new RestException("ROLE_NOTE_FOUND", HttpStatus.NOT_FOUND));
 
+        //USERNING ESKI ROLE PERMISSIONLARINI O'CHIRIB TASHLAYAPMIZ
+        rolePermissionFromUserRepository.deletedByUserId(userRoleDto.getUserId());
+
         user.setRole(role);
 
         userRepository.save(user);
-
-        //USERNING ESKI ROLE PERMISSIONLARINI O'CHIRIB TASHLAYAPMIZ
-        rolePermissionFromUserRepository.deleteByUserId(userRoleDto.getUserId());
 
         //ROLE GA SISTEMADA QANDAY ISHLAR QILA OLISHLIGINI SAQLAYAPMIZ
         saveUserRolePermission(userRoleDto);
@@ -69,17 +77,18 @@ public class UserService {
         return ApiResult.successResponse("SUCCESS_EDITED");
     }
 
-
     public ApiResult<?> getOne(UUID id) {
 
         User user = getUserOrElseThrow(id);
         RoleResDto roleResDto = new RoleResDto(user.getRole());
-        roleResDto.setPermissions(baseService.getPermissionsByUserIdAndRoleId(id,user.getRole().getId()));
+
+        Set<PermissionEnum> permissions = baseService.getPermissionsByUserIdAndRoleId(id, user.getRole().getId());
+
+        roleResDto.setPermissions(permissions);
         UserDto userDto = new UserDto(user.getUsername(),roleResDto);
 
         return ApiResult.successResponse(userDto);
     }
-
 
 //    ---------------------------helper method----------------------------
     //BU METHOD KIRIB KELGAN IDLI USER BAZADA BO'LSA TRUE AKS HOLDA THROWGA OTADI
@@ -98,12 +107,17 @@ public class UserService {
     }
 
     public void saveUserRolePermission(UserRoleDto userRoleDto){
+
+        Set<Permission> permissions = baseService.getPermissions(userRoleDto.getPermissionEnumList());
+
         rolePermissionFromUserRepository.save(
                 new RolePermissionFromUser(
                         userRoleDto.getUserId(),
                         userRoleDto.getRoleId(),
-                        userRoleDto.getPermissionEnumList()));
+                        permissions
+                       ));
     }
+
 //    public ApiResult<?> editUser(UUID id, UserDto userDto) {
 //        System.out.println(id);
 //        System.out.println(userDto.getUsername());

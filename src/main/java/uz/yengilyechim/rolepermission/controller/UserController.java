@@ -33,8 +33,9 @@ public class UserController {
     ApiResult<?>delete(@PathVariable UUID id){
         return userService.delete(id);
     }
+
     //todo edit user role
-    //BU YO'LADMIN UCHUN, ADMIN ISHCHILARIGA ROLE PERMISSIONLARNI SHU YO'L ORQALI BIRIKTIRADI
+    //BU YO'L ADMIN UCHUN, ADMIN ISHCHILARIGA ROLE PERMISSIONLARNI SHU YO'L ORQALI BIRIKTIRADI
     @PreAuthorize(value = "hasAnyAuthority('EDIT_USER_ROLE')")
     @PutMapping("/edit/by-user")
     ApiResult<?>editUserRole(@RequestBody UserRoleDto userRoleDto){
@@ -46,6 +47,7 @@ public class UserController {
 //    ApiResult<?>editUser(@PathVariable UUID id,@RequestBody UserDto userDto){
 //        return userService.editUser(id,userDto);
 //    }
+
 
     @CheckPermission(values = {"GET_USER","GET"})
     @GetMapping("get-one/{id}")

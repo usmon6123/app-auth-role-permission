@@ -21,7 +21,8 @@ public class DefaultPermissionDto {
 
     private Long roleId;
 
-    private Set<PermissionEnum> permissionEnumList = new HashSet<>(Arrays.asList(GET));
+    private Set<PermissionEnum> permissionEnumList = new HashSet<>(Arrays.asList(GET,VIEW));
+//    private PermissionEnum permissionEnum = GET;
 
     public DefaultPermissionDto(UUID userId, Long roleId) {
         this.userId = userId;

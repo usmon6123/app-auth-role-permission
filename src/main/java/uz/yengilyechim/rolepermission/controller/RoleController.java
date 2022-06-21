@@ -29,20 +29,22 @@ public class RoleController {
         return roleService.add(roleDto);
     }
 
-    @CheckPermission(values = "GET_ROLE")
-    @GetMapping("/get-one/{id}")
-    ApiResult<?> getOne(@PathVariable Long id, @CurrentUser User user) {
-        return roleService.getOne(user.getId(),id);
+    //USERNING ROLE VA PERMISSIONLARINI OLADIGAN YO'LI
+    @CheckPermission(values = {"GET","GET_ROLE"})
+    @GetMapping("/get-one/current-user")
+    ApiResult<?> getOne(@CurrentUser User user) {
+        return roleService.getOne(user.getId(),user.getRole().getId());
     }
 
+    //FAQAT BAZADAGI BARCHA ROLLARNI QAYTARADI
     @CheckPermission(values = "GET_ROLES")
     @GetMapping("/get-all")
     ApiResult<?> getAll() {
         return roleService.getAll();
     }
 
-//    @CheckPermission(values = {"EDIT_ROLE","ALL"})
-    @PreAuthorize(value = "hasAnyAuthority('EDIT_ROLE','ALL')")
+    //BU YO'LGA ASOSAN ADMIN KIRIB QO'L OSTIDAGILARNING RO'LE VA PERMISSIONLARINI O'ZGARTIRISHI MUMKIN
+    @CheckPermission(values = {"EDIT_ROLE"})
     @PutMapping("/edit/{id}")
     ApiResult<?>edit(@PathVariable Long id,@RequestBody RoleDto roleDto){
         return roleService.edit(id,roleDto);
@@ -54,7 +56,6 @@ public class RoleController {
 
         return roleService.delete(id);
     }
-
 
     @CheckPermission(values = {"GET_PERMISSION"})
     @GetMapping("/get-all-permission")

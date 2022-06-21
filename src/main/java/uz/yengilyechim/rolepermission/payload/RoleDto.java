@@ -21,4 +21,8 @@ public class RoleDto {
     private Set<PermissionEnum> permissions;
 
 
+    public RoleDto(String name, String description) {
+        this.name = name;
+        this.description = description;
+    }
 }

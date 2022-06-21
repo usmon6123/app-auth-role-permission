@@ -40,12 +40,13 @@ public class AuthController {
         return authService.signIn(loginDto);
     }
 
-//    @PreAuthorize(value = "hasAuthority('ALL')")
     @PostMapping("/refresh-token")
     public ApiResult<TokenDto> refreshToken(@RequestBody TokenDto tokenDto){
         return authService.refreshToken(tokenDto);
     };
 
+
+//----------------------------------TEST---------------------------------------------------
     @GetMapping("/get")
     public HttpEntity<?>get(){
 
@@ -80,4 +81,7 @@ public class AuthController {
         }
 
     }
+//----------------------------------TEST---------------------------------------------------
+
+
 }

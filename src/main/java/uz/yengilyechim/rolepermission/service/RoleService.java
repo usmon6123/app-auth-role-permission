@@ -47,19 +47,25 @@ public class RoleService {
         return ApiResult.successResponse("ROLE_ADDED");
     }
 
+    //USERNING ROLE VA PERMISSIONLARINI OLADIGAN YO'LI
     public ApiResult<?> getOne(UUID userId, Long id) {
 
+        //BAZADA BU IDLI ROLE BOR YO'QLIGINI TEKSHIRYAPDI, TOPOLMASA THROW
         Role role = roleRepository.findById(id).orElseThrow(() -> new RestException("ROLE_NOT_fOUND", HttpStatus.NOT_FOUND));
 
+        //BAZADAN OLINGAN ROLENI BIZGA KERAK BO'LGAN DTOGA O'GIRYAPDI, PERMISSIONLARI MUSTASNO
         RoleResDto roleResDto = roleMapper.roleToRseDto(role);
 
+        //USERNING PERMISSIONLARINI DTOGA SET QILYAPDI
         roleResDto.setPermissions(baseService.getPermissionsByUserIdAndRoleId(userId,id));
 
+        //VA SUCCESS :)
         return ApiResult.successResponse(roleResDto);
 
 
     }
 
+    //FAQAT BAZADAGI BARCHA ROLLARNI QAYTARADI
     public ApiResult<?> getAll() {
 
         //BAZADAN BARCHA ROLE LARNI OLIBERADI

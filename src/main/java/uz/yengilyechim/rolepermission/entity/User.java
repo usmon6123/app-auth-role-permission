@@ -7,12 +7,10 @@ import uz.yengilyechim.rolepermission.entity.template.AbsUUIDEntity;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import uz.yengilyechim.rolepermission.enums.PermissionEnum;
 
 import javax.persistence.*;
-import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
 import java.util.stream.Collectors;
 
 @EqualsAndHashCode(callSuper = true)
@@ -32,6 +30,7 @@ public class User extends AbsUUIDEntity implements UserDetails {
 
     @OnDelete(action = OnDeleteAction.CASCADE)
     @OneToOne(mappedBy = "user")
+    @JoinColumn(name = "role_permission_from_user")
     private RolePermissionFromUser rolePermissionFromUser;
 
 
@@ -42,7 +41,10 @@ public class User extends AbsUUIDEntity implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return rolePermissionFromUser.getPermissionEnum().stream().map(permissionEnum -> new SimpleGrantedAuthority(permissionEnum.name()))
+        //AGAR USERNING PERMISSIONLARI BO'LMASA BO'SH LIST QAYTARAMIZ
+        if (rolePermissionFromUser.getPermissions().isEmpty()) return new ArrayList<>();
+
+        return rolePermissionFromUser.getPermissions().stream().map(permissionEnum -> new SimpleGrantedAuthority(permissionEnum.getNameEnum().name()))
                 .collect(Collectors.toSet());
 
 //        role.getPermissions().stream().map(permissionEnum -> new SimpleGrantedAuthority(permissionEnum.name()))

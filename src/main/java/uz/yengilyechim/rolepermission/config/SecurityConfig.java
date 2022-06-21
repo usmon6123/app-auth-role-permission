@@ -1,5 +1,7 @@
 package uz.yengilyechim.rolepermission.config;
 
+import org.springframework.beans.factory.annotation.Value;
+import uz.yengilyechim.rolepermission.repository.RolePermissionFromUserRepository;
 import uz.yengilyechim.rolepermission.security.JWTFilter;
 import uz.yengilyechim.rolepermission.service.AuthService;
 import lombok.RequiredArgsConstructor;
@@ -24,6 +26,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     private final AuthService authService;
     private final JWTFilter jwtFilter;
+    private final RolePermissionFromUserRepository rolePermissionFromUserRepository;
+
+
+    @Value("${dataLoaderMode}")
+    private String dataLoaderMode;
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -35,7 +42,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .exceptionHandling()
                 .and()
                 .authorizeRequests()
-                .antMatchers("/api/auth/sign-up","/api/auth/sign-in","/api/auth/refresh-token")
+                .antMatchers("/api/auth/sign-up", "/api/auth/sign-in", "/api/auth/refresh-token")
                 .permitAll()
                 .anyRequest()
                 .authenticated();
@@ -44,7 +51,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         //SPRING SECURITYGA SESSIONGA USHLAB QOLMASLIGINI AYTYAPMIZ(default holatda sessionga saqlab userni qo'yadi bu esa o'sha user qayta kirayotganda tokenini tekshirtirmasdan kirishiga yo'l ochiladi)
         http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
     }
-
 
 
     @Override
@@ -60,6 +66,21 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     @Bean
-    PasswordEncoder passwordEncoder(){return new BCryptPasswordEncoder();}
+    PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
 
+    //todo optimallashtirish kerak
+    //Enum Permissionlari saqlanadigan tabllarni on Delete cascade buyruqiga o'zgartiradi proekt ilk run bo'lganida
+    public void dataLoaderD() {
+        if (dataLoaderMode.equals("always")) {
+
+            //BU TABLE role_permission_from_user_permission_enum TABLE BILAN FOREN_KEY QILIB BO'GLANGAN BOG'LANMANI ODDIY QILIB QO'YADI
+            rolePermissionFromUserRepository.deleteOldForeignKey();
+
+            //BU BUYRUQ role_permission_from_user_permission_enum BU TABLE FK_CASCADE_ON_DELETE QILIB BOG'LABERADI,
+            rolePermissionFromUserRepository.addNewForeignKeyOnDeleteCascade();
+
+        }
+    }
 }

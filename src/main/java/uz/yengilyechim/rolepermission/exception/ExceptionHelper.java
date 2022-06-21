@@ -25,6 +25,7 @@ import org.springframework.web.context.request.async.AsyncRequestTimeoutExceptio
 import org.springframework.web.multipart.support.MissingServletRequestPartException;
 import org.springframework.web.servlet.NoHandlerFoundException;
 
+import java.lang.reflect.InvocationTargetException;
 import java.nio.file.AccessDeniedException;
 import java.util.ArrayList;
 import java.util.List;
@@ -140,6 +141,18 @@ public class ExceptionHelper {
 
     @ExceptionHandler(value = {ConversionNotSupportedException.class})
     public ResponseEntity<?> handleException(ConversionNotSupportedException ex) {
+        return new ResponseEntity<>(
+                new ApiResult<>(ex.getMessage(), 500),
+                HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+    @ExceptionHandler(value = {NullPointerException.class})
+    public ResponseEntity<?> handleException(NullPointerException ex) {
+        return new ResponseEntity<>(
+                new ApiResult<>("NullPointerException -> "+ex.getMessage(), 500),
+                HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+    @ExceptionHandler(value = {InvocationTargetException.class})
+    public ResponseEntity<?> handleException(InvocationTargetException ex) {
         return new ResponseEntity<>(
                 new ApiResult<>(ex.getMessage(), 500),
                 HttpStatus.INTERNAL_SERVER_ERROR);
