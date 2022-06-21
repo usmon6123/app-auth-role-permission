@@ -37,8 +37,8 @@ public class DataLoader implements CommandLineRunner {
     private final BaseService baseService;
 
 
-    public static String ROLE_ADMIN;
-    public static String ROLE_USER;
+    public static String ROLE_ADMIN = AppConstant.ADMIN;
+    public static String ROLE_USER = AppConstant.USER;
 
     @Value("${dataLoaderMode}")
     private String dataLoaderMode;
@@ -82,14 +82,19 @@ public class DataLoader implements CommandLineRunner {
                             admin.getId(),
                             permissions));
 
+            Set<PermissionEnum> defaultPermissions = new HashSet<>(Arrays.asList(VIEW,
+                    GET,
+                    GET_ROLE,
+                    GET_USER,
+                    DELETE_USER));
             //istalgan kirgan Userga beriladigan Huquqlar
-            Permission permission = baseService.getPermission(GET);
+            Set<Permission> permissionSet = baseService.getPermissions(defaultPermissions);
 
             rolePermissionFromUserRepository.save(
                     new RolePermissionFromUser(
                             userDefault.getId(),
                             user.getId(),
-                            new HashSet<>(Arrays.asList(permission))));
+                            permissionSet));
 
         }
         else {

@@ -92,28 +92,15 @@ public class RoleService {
         return ApiResult.successResponse(permissionEnumDtoList);
     }
 
-    public ApiResult<?> delete(Long id) {
-
-        //O'CHIRMOQCHI RO'LIMIZ BAZADA BO'LMASA THROWGA OTAMIZ
-        Role role = roleRepository.findById(id).orElseThrow(() -> new RestException("THIS_ROLE_NOT_FOUND", HttpStatus.NOT_FOUND));
-
-        //DATA_LOADERDA DEFAULT QO'SHILADIGAN ROLELARRNI OCHIRMOQCHI BO'LSA THROWGA OTAMIZ
-        if (role.getName().equals(ROLE_ADMIN) && role.getName().equals(ROLE_USER))throw RestException.restThrow("DEFAULT ROLENI O'CHIRISH MUMKINMAS",HttpStatus.CONFLICT);
-
-
-        //AGAR ROLEDAN FOYDALANADIGAN USERLAR BO'LSA THROWGA OTAMIZ
-        if(userRepository.existsByRoleId(id)) throw RestException.restThrow("BU ROLEDAN USERLAR FOYDALANADI,FAQAT USERLAR FOYDALANMAYDIGAN ROLELARNI O'CHIRISH MUMKIN",HttpStatus.CONFLICT);
-
-        roleRepository.deleteById(id);
-        return ApiResult.successResponse("DELETED_ROLE");
-    }
-
     public ApiResult<?> edit(Long id, RoleDto roleDto) {
 
         Role role = roleRepository.findById(id).orElseThrow(() -> new RestException("ROLE_NOT_fOUND", HttpStatus.NOT_FOUND));
 
+        //BU METHOD DEFAULT HOLATDA BAZADA MAVJUD BO'LGAN ROLLARGA TEGILSA(UPDATE/DELETE) THROWGA OTADI
+        ConstRole(role);
+
         //DTO DAGI FIELDLARNI ROLEGA SET QILYAPDI
-        roleMapper.updateRoleOutThePermissions(role,roleDto);
+        roleMapper.updateRoleOutThePermissions(role, roleDto);
 
         roleRepository.save(role);
 
@@ -121,7 +108,32 @@ public class RoleService {
 
     }
 
-//    ----------------------------helper method-----------------------------------
+    public ApiResult<?> delete(Long id) {
 
+        //O'CHIRMOQCHI RO'LIMIZ BAZADA BO'LMASA THROWGA OTAMIZ
+        Role role = roleRepository.findById(id).orElseThrow(() -> new RestException("THIS_ROLE_NOT_FOUND", HttpStatus.NOT_FOUND));
 
+        //BU METHOD DEFAULT HOLATDA BAZADA MAVJUD BO'LGAN ROLLARGA TEGILSA(UPDATE/DELETE) THROWGA OTADI
+        ConstRole(role);
+
+        //AGAR ROLEDAN FOYDALANADIGAN USERLAR BO'LSA THROWGA OTAMIZ
+        if (userRepository.existsByRoleId(id))
+            throw RestException.restThrow("BU ROLEDAN USERLAR FOYDALANADI,FAQAT USERLAR FOYDALANMAYDIGAN ROLELARNI O'CHIRISH MUMKIN", HttpStatus.CONFLICT);
+
+        roleRepository.deleteById(id);
+        return ApiResult.successResponse("DELETED_ROLE");
+    }
+
+    //    ----------------------------helper method-----------------------------------
+
+    //BU METHOD DEFAULT HOLATDA BAZADA MAVJUD BO'LGAN ROLLARGA TEGILSA(UPDATE/DELETE) THROWGA OTADI
+    public void ConstRole(Role role) {
+        Role admin = roleRepository.findByName(ROLE_ADMIN).orElseThrow();
+        Role user = roleRepository.findByName(ROLE_USER).orElseThrow();
+
+        //DATA_LOADERDA DEFAULT QO'SHILADIGAN ROLELARRNI OCHIRMOQCHI BO'LSA THROWGA OTAMIZ
+        if ((role.getName().equals(ROLE_ADMIN) || role.getName().equals(ROLE_USER))||
+                (role.getId().equals(admin.getId()) || role.getId().equals(user.getId())))
+            throw RestException.restThrow("DEFAULT LAVOZIM(ROLE)LARNI O'CHIRISH MUMKINMAS", HttpStatus.CONFLICT);
+    }
 }
